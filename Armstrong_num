@@ -1,0 +1,13 @@
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int copy = n;
+        int sum = 0;
+        while(n>0){
+            int digit = n%10;
+            sum = sum + (int)Math.pow(digit,3);
+            n=n/10;
+        }
+        return sum==copy;
+        
+    }
+}
