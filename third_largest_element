@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+    int arr[100];
+    int n =0;
+    while(scanf("%d",&arr[n])==1){
+        n++;
+    }
+    for(int i = 0;i < n; i++){
+        int min = i;
+        for(int j=i+1;j<n ;j++){
+            if(arr[j]<arr[min]){
+                min = j;
+            }
+        }
+        int temp = arr[i];
+        arr[i]=arr[min];
+        arr[min]= temp;
+    }
+    if(n<3){
+        printf("-1");
+    }
+    else{
+        printf("%d",arr[n-3]);
+    }
+    
+
+}
