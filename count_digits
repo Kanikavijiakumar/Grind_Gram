@@ -1,0 +1,25 @@
+class Solution {
+    public int divisibleByDigits(String s) {
+        int count = 0;
+        int[] remainder = new int[10];
+        for (int digit = 1; digit <= 9; digit++) {
+            int rem = 0;
+
+            for (int i = 0; i < s.length(); i++) {
+                int num = s.charAt(i) - '0';
+                rem = (rem * 10 + num) % digit;
+            }
+
+            remainder[digit] = rem;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            int digit = s.charAt(i) - '0';
+
+            if (digit != 0 && remainder[digit] == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
