@@ -1,0 +1,17 @@
+int missingNum(int *arr, int size) 
+{ 
+    int sum = 0; 
+    int tot = 0; 
+ 
+    for(int k = 0; k < size + 1; k++) 
+    { 
+        tot = tot + (k + 1); 
+    } 
+ 
+    for(int i = 0; i < size; i++) 
+    { 
+        sum = sum + arr[i]; 
+    } 
+ 
+    return tot - sum; 
+}
