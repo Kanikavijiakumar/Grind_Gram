@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+
+    int arr[100];
+    int n = 0;
+
+    while (scanf("%d", &arr[n]) == 1) {
+        n++;
+    }
+
+    int min = arr[0];
+    int max = arr[0];
+
+    for (int i = 1; i < n; i++) {
+
+        if (arr[i] < min)
+            min = arr[i];
+
+        if (arr[i] > max)
+            max = arr[i];
+    }
+
+    printf("[%d, %d]", min, max);
+
+    return 0;
+}
